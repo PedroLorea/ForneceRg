@@ -1,0 +1,52 @@
+<div>
+    <div class="registra">
+        <h2>Agende a sua visita:</h2>
+        <form>
+            <label for="menuMercado">Mercado:</label>
+            <select id="menuMercado" name="mercado" required>
+                <option value="" disabled selected hidden>Selecione o mercado</option>
+                <option value="greenvillage">Mercado Green Village</option>
+                <option value="lorenski">Mercado Lorenski</option>
+            </select>
+            <label>Data:<label>
+            <input type="date" name="data" required>
+            <label>Horário:<label>
+            <input type="time" name="horario" required>
+            <input type="submit" value="Confirmar">
+        </form>
+    </div>
+</div>
+
+<style>
+    .registra{
+        background-color: white;
+        order: 1px solid grey;
+        padding: 30px;
+        margin-left: 300px;
+        margin-top: 60px;
+        max-width: 360px;
+        max-height: 360px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        font-size: 20px;
+    }
+
+    h2{
+        margin-top: 15px;
+    }
+
+    select{
+        display: block;
+        font-size: 15px;
+        width: 330px;
+        height: 40px; 
+        margin-bottom: 15px;
+    }
+    .registra input{
+        display: block;
+        margin-bottom: 15px;
+        width: 120px;
+        height: 40px;
+        font-size: 15px;
+    }
+</style>

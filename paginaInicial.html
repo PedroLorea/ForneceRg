@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForneceRG</title>
+    <style>
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: orange;
+            text-shadow:
+                -1px -1px 0px #000,
+                -1px 1px 0px #000,
+                1px -1px 0px #000,
+                1px 0px 0px #000;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav main"
+                "footer footer";
+            grid-template-rows: 80px 1fr 100px;
+            grid-template-columns: 230px 1fr;
+            min-height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background-color: white;
+            padding: 10px 20px;
+            position: relative;            
+            border-bottom: 2px solid orange;
+        }
+
+        header::after{
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid rgb(198, 198, 198);
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        main {
+            grid-area: main;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc(100% - 25px);
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(198, 198, 198);
+            color: #fff;
+            border-top: 3px solid orange;
+            padding: 20px;
+        }
+
+        .login {
+            border: 1px solid grey;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, auto);
+            gap: 40px;
+            padding: 60px;
+            margin-right: 280px;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .fornecedor{
+            font-size: 40px;
+            width: 100%;
+        }
+
+        .dono{
+            font-size: 40px;
+            width: 100%;
+        }
+
+        .criarConta{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ForneceRG</h1>
+    </header>
+    <nav></nav>
+    <main>
+        <div class="login">
+            <a href="login.html"><button class="fornecedor">Sou Fornecedor</button></a>
+            <a href="login.html"><button class="dono">Sou Dono</button></a>
+            <button class="criarConta">Criar Conta</button>
+        </div>
+    </main>
+    <footer></footer>
+
+
+</body>
+
+</html>

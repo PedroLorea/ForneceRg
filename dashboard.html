@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForneceRG</title>
+    <style>
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: orange;
+            text-shadow:
+                -1px -1px 0px #000,
+                -1px 1px 0px #000,
+                1px -1px 0px #000,
+                1px 0px 0px #000;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: 230px 1fr;
+            grid-template-rows: 80px 1fr 100px;
+            grid-template-areas:
+                "header header"
+                "nav main"
+                "footer footer";
+            min-height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background-color: white;
+            padding: 10px 20px;
+            position: relative;
+            border-bottom: 2px solid orange;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid rgb(198, 198, 198);
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: aliceblue;
+        }
+
+        main {
+            grid-area: main;
+            background-color: antiquewhite;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(198, 198, 198);
+            color: #fff;
+            border-top: 3px solid orange;
+            padding: 20px;
+        }
+
+        nav button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        nav div {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ForneceRG</h1>
+    </header>
+    <nav>
+        <div>
+            <button id="botao-registrar">Registrar</button>
+            <button id="botao-calendario">Calendario</button>
+            <button id="botao-notificacoes">Notificações</button>
+            <button id="botao-chat">Chat</button>
+            <button id="botao-perfil">Perfil</button>
+            <button id="botao-perfil">Sair</button>
+        </div>
+    </nav>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        var registrar = document.getElementById('botao-registrar')
+        var calendario = document.getElementById('botao-calendario')
+        var notificacoes = document.getElementById('botao-notificacoes')
+        var chat = document.getElementById('botao-chat')
+        var perfil = document.getElementById('botao-perfil')
+        var main = document.querySelector('main')
+
+        registrar.addEventListener('click', function () {
+            atualizarConteudo('registrar.html');
+        });
+        calendario.addEventListener('click', function () {
+            atualizarConteudo('calendario.html');
+        });
+        notificacoes.addEventListener('click', function () {
+            atualizarConteudo('notificacoes.html');
+        });
+        chat.addEventListener('click', function () {
+            atualizarConteudo('chat.html');
+        });
+        perfil.addEventListener('click', function () {
+            atualizarConteudo('perfil.html');
+        });
+
+
+        function atualizarConteudo(conteudo) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    main.innerHTML = this.responseText;
+                }
+            };
+            xhttp.open('GET', conteudo, true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

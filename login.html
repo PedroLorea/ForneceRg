@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForneceRG</title>
+    <style>
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: orange;
+            text-shadow:
+                -1px -1px 0px #000,
+                -1px 1px 0px #000,
+                1px -1px 0px #000,
+                1px 0px 0px #000;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav main"
+                "footer footer";
+            grid-template-rows: 80px 1fr 100px;
+            grid-template-columns: 230px 1fr;
+            min-height: 100vh;
+        }
+
+        header {
+            grid-area: header;
+            background-color: white;
+            padding: 10px 20px;
+            position: relative;
+            border-bottom: 2px solid orange;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid rgb(198, 198, 198);
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        main {
+            grid-area: main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100% - 25px);
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(198, 198, 198);
+            color: #fff;
+            border-top: 3px solid orange;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .login {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-right: 280px;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 65px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #666;
+        }
+
+        a {
+            display: inline;
+            float: right;
+            padding: 10px 5px;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ForneceRG</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <div class="login">
+            <h2>Login</h2>
+            <form action="dashboard.html">
+                <label>Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label>Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <input type="submit" value="Entrar">
+
+                <a href="">Esqueci a senha</a>
+                <a href="paginaInicial.html">Voltar</a>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>
