@@ -90,7 +90,7 @@
             <button id="botao-notificacoes">Notificações</button>
             <button id="botao-chat">Chat</button>
             <button id="botao-perfil">Perfil</button>
-            <button id="botao-perfil">Sair</button>
+            <a href="paginaInicial.html"><button id="botao-sair">Sair</button></a>
         </div>
     </nav>
     <main>
@@ -108,7 +108,7 @@
         var main = document.querySelector('main')
 
         registrar.addEventListener('click', function () {
-            atualizarConteudo('registrar.html');
+            atualizarConteudo('registrarVisita.html');
         });
         calendario.addEventListener('click', function () {
             atualizarConteudo('calendario.html');

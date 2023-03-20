@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForneceRG</title>
+    <title>Document</title>
+
     <style>
         h1 {
             font-size: 3em;
@@ -136,15 +137,14 @@
     </nav>
     <main>
         <div class="login">
-            <h2>Login</h2>
-            <form action="dashboard.html">
-                <label>Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+            <h2>Novo Usuário</h2>
+            <form>
+                <label>Email:</label>
+                <input type="text" id="email" name="nome" required>
                 <label>Senha:</label>
                 <input type="password" id="senha" name="senha" required>
-                <input type="submit" value="Entrar">
+                <input id="criar" type="submit" value="Criar">
 
-                <a href="">Esqueci a senha</a>
                 <a href="paginaInicial.html">Voltar</a>
             </form>
         </div>
@@ -153,9 +153,49 @@
     <footer>
 
     </footer>
+    </head>
 
-    <script>
 
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDdiignQxi8gnROGyGF_sot0_lff7pwdFw",
+            authDomain: "fornecerg.firebaseapp.com",
+            projectId: "fornecerg",
+            storageBucket: "fornecerg.appspot.com",
+            messagingSenderId: "289504043024",
+            appId: "1:289504043024:web:02a6af574fac3c66042a95"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById('criar').addEventListener('click', function () {
+            const email = document.getElementById('email').value
+            const password = document.getElementById('senha').value
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+
+                    alert('Criado com sucesso.')
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    alert('OPS! Houve um erro.')
+                });
+        })
     </script>
 </body>
 
